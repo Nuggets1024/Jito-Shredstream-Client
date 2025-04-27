@@ -16,6 +16,7 @@ impl ShredstreamClient {
     }
 
     pub async fn connect(&self) -> Result<ShredstreamProxyClient<Channel>, tonic::transport::Error> {
+        println!("正在连接到Jito Shredstream: {}", self.server_url);
         ShredstreamProxyClient::connect(self.server_url.clone()).await
     }
 
@@ -27,7 +28,10 @@ impl ShredstreamClient {
             let request = tonic::Request::new(SubscribeEntriesRequest {});
             match client.subscribe_entries(request).await {
                 Ok(response) => return Ok(response.into_inner()),
-                Err(_) => sleep(Duration::from_secs(5)).await,
+                Err(e) => {
+                    println!("订阅错误: {}，5秒后重试...", e);
+                    sleep(Duration::from_secs(5)).await;
+                }
             }
         }
     }

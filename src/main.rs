@@ -13,12 +13,14 @@ use transaction::pumpamm_parser::parse_pumpamm_transaction;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // 加载.env文件
+    dotenv::dotenv().ok();
+    
     let config = Config::default();
     let client = ShredstreamClient::new(config.server_url.clone());
     
-    println!("开始监听目标账户的交易...");
+    println!("开始监听交易...");
     for account in &config.target_accounts {
-        println!("监控账户: {}", account);
     }
     
     loop {

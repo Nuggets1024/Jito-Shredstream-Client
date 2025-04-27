@@ -13,6 +13,9 @@ pub struct Config {
 
 impl Default for Config {
     fn default() -> Self {
+        // 加载.env文件
+        dotenv::dotenv().ok();
+        
         // 原始创建代币交易相关的目标账户
         let create_account = env::var("CREATE_ACCOUNT")
             .unwrap_or_else(|_| "TSLvdd1pWpHVjahSpsvCXUbgwsL3JAcvokwaKt1eokM".to_string());
