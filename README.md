@@ -65,7 +65,7 @@ cargo build --release
 
 ```bash
 # Jito Shred 服务端URL
-SERVER_URL=http://127.0.0.1:9999
+SHREDSTREAM_SERVER_URL=http://45.77.55.124:9999
 ```
 
 
