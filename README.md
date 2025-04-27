@@ -59,16 +59,15 @@ cd jito-shredstream-client
 cargo build --release
 ```
 
-## 配置
+## 环境变量配置
 
-系统默认通过环境变量进行配置，主要配置项包括：
+创建一个`.env`文件在项目根目录，或者通过环境变量设置以下配置：
 
-- `SHREDSTREAM_SERVER_URL` - Jito Shredstream 服务器地址（默认为 "http://127.0.0.1:9999"）
-- `CREATE_ACCOUNT` - 创建代币交易相关的目标账户（默认为 "TSLvdd1pWpHVjahSpsvCXUbgwsL3JAcvokwaKt1eokM"）
-- `SWAP_ACCOUNT` - Swap 交易相关的目标账户（默认为 "Ce6TQqeHC9p8KetsN6JsjHK7UTZk7nasjjnr7XxXp9F1"）
+```bash
+# Jito Shred 服务端URL
+SERVER_URL=http://127.0.0.1:9999
+```
 
-项目还内置了对特定协议账户的监控：
-- Pump AMM 程序地址：`pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA`
 
 ## 运行
 
