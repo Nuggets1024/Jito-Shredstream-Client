@@ -297,7 +297,7 @@ Pump协议交易解析:
 ```
 
 ## 联系方式
-
+- 电 报：[小P](https://t.me/caobizhiwang)
 - 交流群：[Buff社区](https://t.me/chainbuff)
 
 ## 贡献指南
