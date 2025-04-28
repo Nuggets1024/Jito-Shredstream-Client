@@ -20,7 +20,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = ShredstreamClient::new(config.server_url.clone());
     
     println!("开始监听交易...");
-    for account in &config.target_accounts {
+    for _account in &config.target_accounts {
     }
     
     loop {
